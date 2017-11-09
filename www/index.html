@@ -94,7 +94,7 @@
         </symbol>
     </svg>
 
- 
+
 
 
 
@@ -103,9 +103,7 @@
     <script src="dx.web.js"></script>
     <script>
         document.addEventListener('deviceready', function () {
-            alert('a');
             $(document).ready(function () {
-                alert('b');
                 var syncDiv = document.getElementById('sync');
 
                 var appendAppScript = function () {
@@ -113,61 +111,28 @@
                     s.type = 'text/javascript';
                     s.src = window.localStorage.getItem('appPath');
                     document.body.appendChild(s);
-                    syncDiv.innerText = 'DONE';
                 };
 
-
-                alert('c');
-
                 $.get("https://studio.uplus.com.my/api/AppVersion", function (data) {
-                    alert('e' + data);
-
                     if (window.localStorage.getItem('appVersion') == data) {
-                        alert('f');
                         appendAppScript();
                         return;
                     }
 
-
-                    alert('g');
-
                     var fileTransfer = new FileTransfer();
-                    fileTransfer.download('https://studio.uplus.com.my/app.min.js?v=' + data, 
-                        cordova.file.dataDirectory + "cache/app.min.js" ,
-                            function (theFile) {
-                                alert('i' + theFile.toURL());
+                    fileTransfer.download('https://studio.uplus.com.my/app.min.js?v=' + data, cordova.file.dataDirectory + "cache/app.min.js",
+                        function (theFile) {
                             window.localStorage.setItem('appVersion', data);
                             window.localStorage.setItem('appPath', theFile.toURL());
                             appendAppScript();
                         },
-                            function (error) {
-                                alert('j');
-                            syncDiv.innerText = 'Error: Close the app then try again. ' + error.code + ' ' +  error.source + ' ' + error.target; 
+                        function (error) { 
+                            syncDiv.innerText = 'Error: Close the app then try again. ' + error.code + ' ' + error.source + ' ' + error.target;
                         }
-                    );
-
-                    //var sync = ContentSync.sync({
-                    //    src: 'https://studio.uplus.com.my/app.min.js?v=' + data,
-                    //    id: 'app',
-                    //    timeout: 60
-                    //});
-
-                    //sync.on('progress', function (data) {
-                    //    syncDiv.innerText = 'Downloading...' + data.progress + '%';
-                    //});
-
-                    //sync.on('complete', function (data) {
-                    //    window.localStorage.setItem('appVersion', data);
-                    //    window.localStorage.setItem('appPath', data.localPath);
-                    //});
-
-                    //sync.on('error', function (e) {
-                    //    syncDiv.innerText = 'Error: Close the app then try again.';
-                    //});
-
-                }).fail(function () {
-                    alert('d');
-                    syncDiv.innerText = 'Error: Close the app then try again.';
+                    ); 
+                  
+                }).fail(function () { 
+                    syncDiv.innerText = 'Network Error: Close the app then try again.';
                 });
             });
         });

@@ -17,7 +17,7 @@
 
     <div id="splash">
         <span class="marquee marquee-splash"></span>
-        <div style="margin-top: 80px">Loading</div>
+        <div id="sync" style="margin-top: 80px">Loading</div>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -94,8 +94,7 @@
         </symbol>
     </svg>
 
-
-    <div id="sync">Checking....</div>
+ 
 
 
 
@@ -117,21 +116,32 @@
                     syncDiv.innerText = 'DONE';
                 };
 
+
+                alert('c');
+
                 $.get("https://studio.uplus.com.my/api/AppVersion", function (data) {
+                    alert('e' + data);
+
                     if (window.localStorage.get('appVersion') == data) {
+                        alert('f');
                         appendAppScript();
                         return;
                     }
 
+
+                    alert('g');
+
                     var fileTransfer = new FileTransfer();
-                    fileTransfer.download('https://studio.uplus.com.my/app.min.js?v=' + data,
+                    fileTransfer.download('https://studio.uplus.com.my/app.min.js?v=' + data, 
                         cordova.file.dataDirectory + "cache/app.min.js" ,
-                        function (theFile) {
+                            function (theFile) {
+                                alert('i' + theFile.toURL());
                             window.localStorage.setItem('appVersion', data);
                             window.localStorage.setItem('appPath', theFile.toURL());
                             appendAppScript();
                         },
-                        function (error) {
+                            function (error) {
+                                alert('j');
                             syncDiv.innerText = 'Error: Close the app then try again. ' + error.code + ' ' +  error.source + ' ' + error.target; 
                         }
                     );
@@ -156,6 +166,7 @@
                     //});
 
                 }).fail(function () {
+                    alert('d');
                     syncDiv.innerText = 'Error: Close the app then try again.';
                 });
             });

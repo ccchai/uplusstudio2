@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <title ng-bind="pageTitle"></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+    <link href="/bundle.min.css" rel="stylesheet" />
+    <script src="cordova.js"></script>
+</head>
+<body>
+    <div class="u-view" ng-view autoscroll="true"></div>
+    <u-loading></u-loading>
+
+    <div id="splash">
+        <span class="marquee marquee-splash"></span>
+        <div style="margin-top: 80px">Loading</div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-android-menu" viewBox="0 0 512 512">
+            <path d="m64 384l384 0 0-43-384 0z m0-107l384 0 0-42-384 0z m0-149l0 43 384 0 0-43z" />
+        </symbol>
+
+        <symbol id="icon-cw" viewBox="0 0 512 512">
+            <path d="m224 46c58 0 107 20 147 59c41 40 62 88 63 145c0 0 63 0 63 0c0 0-95 105-95 105c0 0-94-105-94-105c0 0 74 0 74 0c-1-42-17-78-48-108c-31-29-67-44-110-44c-43 0-80 16-110 46c-31 31-46 68-46 112c0 43 15 80 46 111c30 30 67 46 110 46c36 0 67-11 93-31c0 0 36 39 36 39c-37 30-80 45-129 45c-57 0-106-21-147-62c-41-40-62-90-62-148c0-58 21-108 62-148c41-41 90-62 147-62" />
+        </symbol>
+
+        <symbol id="icon-folder-search" viewBox="0 0 512 512">
+            <path d="m203 363l-124 0c4-7 6-14 6-22l0-234l342 0l0 96c0 6 4 10 10 10c6 0 11-4 11-10l0-107c0-6-5-11-11-11l-32 0l0-32c0-6-4-10-10-10l-267 0l0-32c0-6-5-11-11-11l-106 0c-6 0-11 5-11 11l0 330c0 24 19 43 43 43l160 0c6 0 10-5 10-11c0-6-4-10-10-10z m-182-22l0-320l86 0l0 32c0 6 4 11 10 11l267 0l0 21l-309 0c-6 0-11 5-11 11l0 245c0 12-10 22-21 22c-12 0-22-10-22-22z m488 153l-68-68c13-16 20-35 20-57c0-50-41-92-92-92c-50 0-92 42-92 92c0 51 42 92 92 92c22 0 41-7 57-20l68 68c2 2 5 3 7 3c3 0 6-1 8-3c4-4 4-11 0-15z m-210-125c0-39 31-70 70-70c39 0 71 31 71 70c0 39-32 71-71 71c-39 0-70-32-70-71z" />
+        </symbol>
+
+        <symbol id="icon-plus" viewBox="0 0 512 512">
+            <path d="m448 224l-160 0 0-160-64 0 0 160-160 0 0 64 160 0 0 160 64 0 0-160 160 0z" />
+        </symbol>
+
+        <symbol id="icon-search" viewBox="0 0 512 512">
+            <path d="m445 387l-85-86c14-24 21-51 21-78 0-88-71-159-158-159-88 0-159 71-159 159 0 88 71 159 159 159 28 0 55-8 80-23l84 86c2 2 5 3 7 3 3 0 6-1 8-3l43-44c4-4 4-10 0-14z m-222-261c53 0 96 43 96 97 0 53-43 97-96 97-54 0-97-44-97-97 0-54 43-97 97-97z" />
+        </symbol>
+
+        <symbol id="icon-question-mark" viewBox="0 0 512 512">
+            <path d="m277 384c0 12-9 21-21 21c-12 0-21-9-21-21c0-12 9-21 21-21c12 0 21 9 21 21z m-21-384c-141 0-256 115-256 256c0 141 115 256 256 256c141 0 256-115 256-256c0-141-115-256-256-256z m0 491c-129 0-235-106-235-235c0-129 106-235 235-235c129 0 235 106 235 235c0 129-106 235-235 235z m0-363c-41 0-75 33-75 75c0 6 5 10 11 10c6 0 11-4 11-10c0-30 24-54 53-54c29 0 53 24 53 54c0 29-24 53-53 53c-6 0-11 5-11 11l0 64c0 6 5 10 11 10c6 0 11-4 11-10l0-54c36-6 64-37 64-74c0-42-34-75-75-75z" />
+        </symbol>
+
+        <symbol id="icon-clip-1" viewBox="0 0 512 512">
+            <path d="m465 91c-24-24-56-38-90-38c-35 0-67 14-91 38l-256 256c-37 37-37 98 0 136c19 18 43 28 68 28c25 0 49-10 68-28l245-246c10-10 15-24 15-38c0-14-5-27-15-38c-10-10-24-15-38-15c-14 0-28 5-38 15l-181 182c-4 4-4 11 0 15c4 4 11 4 15 0l182-181c12-13 33-13 45 0c6 6 9 14 9 22c0 9-3 17-9 23l-245 246c-29 29-77 29-106 0c-29-30-29-77 0-106l256-256c20-20 47-31 76-31c28 0 55 11 75 31c42 42 42 109 0 151l-181 181c-4 4-4 11 0 15c4 4 11 4 15 0l181-181c50-50 50-131 0-181z" />
+        </symbol>
+
+        <symbol id="icon-external-link" viewBox="0 0 512 512">
+            <path d="m402 265l0 92c0 22-8 42-24 58-16 16-35 24-58 24l-238 0c-22 0-42-8-58-24-16-16-24-36-24-58l0-238c0-23 8-42 24-58 16-16 36-24 58-24l201 0c3 0 5 0 7 2 2 2 3 4 3 7l0 18c0 3-1 5-3 7-2 1-4 2-7 2l-201 0c-12 0-23 5-32 14-9 9-13 19-13 32l0 238c0 12 4 23 13 32 9 9 20 13 32 13l238 0c13 0 23-4 32-13 9-9 14-20 14-32l0-92c0-3 1-5 2-6 2-2 4-3 7-3l18 0c3 0 5 1 7 3 1 1 2 3 2 6z m110-247l0 147c0 5-2 9-5 12-4 4-8 6-13 6-5 0-10-2-13-6l-50-50-187 186c-2 2-4 3-6 3-3 0-5-1-7-3l-32-32c-2-2-3-4-3-7 0-2 1-4 3-6l186-187-50-50c-4-3-6-8-6-13 0-5 2-9 6-13 3-3 7-5 12-5l147 0c5 0 9 2 13 5 3 4 5 8 5 13z" />
+        </symbol>
+
+        <symbol id="icon-floppy-o" viewBox="0 0 512 512">
+            <path d="m146 439l220 0 0-110-220 0z m256 0l37 0 0-256c0-3-1-6-3-11-2-5-4-8-6-10l-80-80c-2-2-5-4-10-6-4-2-8-3-11-3l0 119c0 8-3 14-8 19-5 6-12 8-19 8l-165 0c-7 0-14-2-19-8-6-5-8-11-8-19l0-119-37 0 0 366 37 0 0-119c0-8 2-14 8-19 5-6 12-8 19-8l238 0c7 0 14 2 19 8 6 5 8 11 8 19z m-109-265l0-92c0-2-1-4-3-6-2-2-4-3-7-3l-54 0c-3 0-5 1-7 3-2 2-3 4-3 6l0 92c0 2 1 4 3 6 2 2 4 3 7 3l54 0c3 0 5-1 7-3 2-2 3-4 3-6z m182 9l0 265c0 8-2 14-8 19-5 6-11 8-19 8l-384 0c-8 0-14-2-19-8-6-5-8-11-8-19l0-384c0-8 2-14 8-19 5-6 11-8 19-8l265 0c8 0 16 1 25 5 9 4 17 9 22 14l80 80c5 5 10 13 14 22 4 9 5 17 5 25z" />
+        </symbol>
+
+        <symbol id="icon-close" viewBox="0 0 512 512">
+            <path d="m444 387l-132-132 132-130c5-5 5-14 0-19l-37-38c-3-2-7-4-10-4-4 0-7 2-10 4l-131 130-131-130c-3-2-6-4-10-4-4 0-7 2-10 4l-37 38c-5 5-5 14 0 20l132 130-132 131c-2 3-4 6-4 10 0 4 2 7 4 10l38 37c3 3 6 4 10 4 3 0 7-1 9-4l131-131 131 131c2 3 6 4 10 4 3 0 7-1 9-4l38-37c2-3 4-6 4-10 0-4-2-7-4-10z" />
+        </symbol>
+
+        <symbol id="icon-check-1" viewBox="0 0 512 512">
+            <path d="m384 96l-192 192-64-64-64 64 128 128 256-256z" />
+        </symbol>
+
+        <symbol id="icon-hourglass" viewBox="0 0 512 512">
+            <path d="m399 117c0 15-8 31-24 49c-17 18-33 35-50 51c-17 16-25 29-25 39c0 10 8 23 25 39c17 16 33 32 50 50c16 17 24 34 24 49c0 0 0 61 0 61c0 11-14 24-44 37c-29 13-62 20-99 20c-37 0-70-7-99-20c-30-13-44-26-44-37c0 0 0-61 0-61c0-15 8-32 24-49c17-18 33-34 50-50c17-16 25-29 25-39c0-10-8-23-25-39c-17-16-33-33-50-51c-16-18-24-34-24-49c0 0 0-61 0-61c0-11 14-23 44-36c30-13 63-20 99-20c36 0 69 7 99 20c30 13 44 25 44 36c0 0 0 61 0 61m-246-58c0 0-10 8-10 8c-1 2 0 5 2 7c32 17 69 26 111 26c45 0 83-8 113-25c4-4 2-9-9-16c-32-18-67-27-103-27c-41 0-76 9-104 27m116 197c0-6 1-12 2-17c2-5 5-11 10-17c4-6 8-10 10-13c2-2 7-7 16-15c8-9 13-13 15-15c31-31 47-52 47-62c0 0 1-26 1-26c-34 19-72 28-114 28c-42 0-80-9-114-28c0 0 2 26 2 26c0 11 16 31 46 62c3 2 6 6 12 11c5 5 9 9 12 11c0 0 9 10 9 10c0 0 3 4 9 11c6 7 8 10 6 10c-2 0-1 4 4 12c5 8 6 12 2 12c0 3 0 7-1 10c0 3-1 6-3 9c-2 3-3 6-4 8c-1 3-3 5-6 9c0 0-6 8-6 8c0 0-2 2-7 8c-6 5-8 8-9 7c0 0-3 3-9 9c-6 5-9 8-9 8c-30 30-46 51-46 62c0 0 0 34 0 34c3-1 14-5 34-12c20-6 36-14 47-22c12-8 18-18 18-29c0-11 4-16 13-16c9 0 13 5 13 16c0 11 6 21 17 29c11 8 28 16 48 22c21 7 33 11 35 12c0 0 0-34 0-34c0-10-16-31-47-62c-2-2-5-5-11-10c-6-6-10-10-11-11c-2-2-5-5-10-10c-4-5-7-8-9-11c-2-3-4-6-6-10c-2-5-4-8-5-12c0-4-1-8-1-12" />
+        </symbol>
+        <symbol id="icon-android-arrow-back" viewBox="0 0 512 512">
+            <path d="m427 235l-260 0 120-120-31-30-171 171 171 171 30-30-119-120 260 0z" />
+        </symbol>
+        <symbol id="icon-android-arrow-forward" viewBox="0 0 512 512">
+            <path d="m85 277l260 0-120 120 31 30 171-171-171-171-30 30 119 120-260 0z" />
+        </symbol>
+        <symbol id="icon-alert" viewBox="0 0 512 512">
+            <path d="m320 480l-128 0 0-96 128 0z m-16-160l-96 0-16-288 128 0z" />
+        </symbol>
+
+        <symbol id="icon-playback-pause" viewBox="0 0 512 512">
+            <path d="m128 416l96 0 0-320-96 0z m160-320l0 320 96 0 0-320z" />
+        </symbol>
+        <symbol id="icon-playback-play" viewBox="0 0 512 512">
+            <path d="m128 96l256 160-256 160z" />
+        </symbol>
+
+        <symbol id="icon-android-more-vertical" viewBox="0 0 512 512">
+            <path d="m296 136c0-22-18-40-40-40-22 0-40 18-40 40 0 22 18 40 40 40 22 0 40-18 40-40z m0 240c0-22-18-40-40-40-22 0-40 18-40 40 0 22 18 40 40 40 22 0 40-18 40-40z m0-120c0-22-18-40-40-40-22 0-40 18-40 40 0 22 18 40 40 40 22 0 40-18 40-40z" />
+        </symbol>
+
+        <symbol id="icon-paperclip" viewBox="0 0 512 512">
+            <path d="m456 396c0 22-8 41-23 56-15 15-33 22-56 22-25 0-48-9-67-28l-222-222c-21-22-32-48-32-77 0-31 10-56 31-78 21-21 47-31 77-31 30 0 56 10 78 32l173 173c2 2 3 4 3 6 0 3-3 8-9 14-6 6-10 8-13 8-2 0-5-1-7-2l-173-174c-15-15-32-22-51-22-21 0-38 7-52 22-13 14-20 31-20 51 0 20 7 38 21 52l222 222c12 12 26 18 41 18 13 0 23-4 31-12 8-8 12-18 12-30 0-16-6-30-18-42l-166-166c-5-4-11-7-17-7-6 0-11 2-14 6-4 3-6 8-6 14 0 6 3 11 8 16l117 118c2 1 3 4 3 6 0 3-3 7-9 13-6 6-11 9-14 9-2 0-4-1-6-3l-117-117c-12-11-18-26-18-42 0-16 5-29 16-40 11-11 24-16 40-16 17 0 31 6 42 18l166 166c19 18 29 41 29 67z" />
+        </symbol>
+    </svg>
+
+
+    <div id="sync">Checking....</div>
+
+
+
+    <script src="/core.min.js"></script>
+    <script src="/jszip.min.js"></script>
+    <script>
+        document.addEventListener('deviceready', function () {
+            $(document).ready(function () {
+                var syncDiv = document.getElementById('sync');
+
+                var appendAppScript = function () {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.src = window.localStorage.getItem('appPath');
+                    document.body.appendChild(s);
+                    syncDiv.innerText = 'DONE';
+                };
+
+                $.get("https://studio.uplus.com.my/api/AppVersion", function (data) {
+                    if (window.localStorage.get('appVersion') == data) {
+                        appendAppScript();
+                        return;
+                    }
+
+                    var fileTransfer = new FileTransfer();
+                    fileTransfer.download('https://studio.uplus.com.my/app.min.js?v=' + data,
+                        cordova.file.dataDirectory + "cache/app.min.js" ,
+                        function (theFile) {
+                            window.localStorage.setItem('appVersion', data);
+                            window.localStorage.setItem('appPath', theFile.toURL());
+                            appendAppScript();
+                        },
+                        function (error) {
+                            syncDiv.innerText = 'Error: Close the app then try again. ' + error.code + ' ' +  error.source + ' ' + error.target; 
+                        }
+                    );
+
+                    //var sync = ContentSync.sync({
+                    //    src: 'https://studio.uplus.com.my/app.min.js?v=' + data,
+                    //    id: 'app',
+                    //    timeout: 60
+                    //});
+
+                    //sync.on('progress', function (data) {
+                    //    syncDiv.innerText = 'Downloading...' + data.progress + '%';
+                    //});
+
+                    //sync.on('complete', function (data) {
+                    //    window.localStorage.setItem('appVersion', data);
+                    //    window.localStorage.setItem('appPath', data.localPath);
+                    //});
+
+                    //sync.on('error', function (e) {
+                    //    syncDiv.innerText = 'Error: Close the app then try again.';
+                    //});
+
+                }).fail(function () {
+                    syncDiv.innerText = 'Error: Close the app then try again.';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

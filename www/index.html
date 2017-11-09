@@ -122,7 +122,7 @@
                 $.get("https://studio.uplus.com.my/api/AppVersion", function (data) {
                     alert('e' + data);
 
-                    if (window.localStorage.get('appVersion') == data) {
+                    if (window.localStorage.getItem('appVersion') == data) {
                         alert('f');
                         appendAppScript();
                         return;

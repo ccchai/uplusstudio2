@@ -8,7 +8,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-    <link href="/bundle.min.css" rel="stylesheet" />
+    <link href="bundle.min.css" rel="stylesheet" />
     <script src="cordova.js"></script>
 </head>
 <body>
@@ -99,11 +99,14 @@
 
 
 
-    <script src="/core.min.js"></script>
-    <script src="/jszip.min.js"></script>
+    <script src="core.min.js"></script>
+    <script src="jszip.min.js"></script>
+    <script src="dx.web.js"></script>
     <script>
         document.addEventListener('deviceready', function () {
+            alert('a');
             $(document).ready(function () {
+                alert('b');
                 var syncDiv = document.getElementById('sync');
 
                 var appendAppScript = function () {

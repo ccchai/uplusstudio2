@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="my.com.uplus.studio2" version="3.0.0" android-versionCode="30000" xmlns:android = "http://schemas.android.com/apk/res/android">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="my.com.uplus.studio2" version="2.1.6" android-versionCode="21600" xmlns:android = "http://schemas.android.com/apk/res/android">
   <name>Uplus Studio</name>
   <description>Manage your business while you're on the go with Uplus Studio.</description>
   <author href="http://www.uplus.com.my" email="ccchai@uplus.com.my">Uplus Software</author>
@@ -17,10 +17,13 @@
   <preference name="LoadingPageDialog" value="Uplus Studio,Loading ..."/> 
   <preference name='phonegap-version' value='cli-7.0.1' />
 
+  <gap:plugin name="cordova-plugin-device" source="npm" spec="*"/>
+  <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="*"/>
+  <gap:plugin name="cocoon-plugin-inapps-android-googleplay" source="npm" spec="*"/>
+  <gap:plugin name="https://github.com/loicknuchel/cordova-device-accounts.git" spec="https://github.com/loicknuchel/cordova-device-accounts.git"/>
 
-
-  <gap:plugin name="cordova-plugin-file" source="npm" spec="*" />
-  <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="*" />
+  <!--<gap:plugin name="cordova-plugin-file" source="npm" spec="*" />
+  <gap:plugin name="cordova-plugin-file-transfer" source="npm" spec="*" />-->
 
   <!--<gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="*" />
  	<gap:plugin name="cordova-plugin-bluetooth-serial" source="npm" spec="*"/>-->

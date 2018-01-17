@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "921019930709",
+    "firebase_url": "https://medalink-9a0b8.firebaseio.com",
+    "project_id": "medalink-9a0b8",
+    "storage_bucket": "medalink-9a0b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921019930709:android:0baa44d2bb959f83",
+        "android_client_info": {
+          "package_name": "my.com.uplus.medalink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921019930709-9uce0dgg0cbd7krhvorsgfu5c16a7ih3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdAOuNdUOLTEwAsZEh2tkQFWFBHhXLxzE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921019930709:android:ba6c1d0610bcb4b1",
+        "android_client_info": {
+          "package_name": "my.com.uplus.studio2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921019930709-9uce0dgg0cbd7krhvorsgfu5c16a7ih3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdAOuNdUOLTEwAsZEh2tkQFWFBHhXLxzE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

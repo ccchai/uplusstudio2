@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="my.com.uplus.studio2" version="2.1.9" android-versionCode="21900" xmlns:android = "http://schemas.android.com/apk/res/android">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="my.com.uplus.studio2" version="2.2.1" android-versionCode="22100" xmlns:android = "http://schemas.android.com/apk/res/android">
   <name>Uplus Studio</name>
   <description>Manage your business while you're on the go with Uplus Studio.</description>
   <author href="http://www.uplus.com.my" email="ccchai@uplus.com.my">Uplus Software</author>
